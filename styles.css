@@ -265,27 +265,37 @@ main {
   color: var(--muted-dim);
 }
 
-/* ---------- Design & video showcase ---------- */
-.showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  margin-top: 1.75rem;
-  background: var(--line);
+/* ---------- Design & video carousel ---------- */
+.carousel {
   border: 1px solid var(--line);
-}
-.showcase-item {
-  margin: 0;
   background: var(--bg);
 }
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.showcase-item {
+  margin: 0;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background: var(--bg);
+}
+/* Fixed frame so the carousel never jumps in height between slides.
+   "contain" shows the whole flyer or video without cropping.
+   Change the ratio (e.g. 3 / 4 or 9 / 16) if most pieces are portrait. */
 .showcase-item img,
 .showcase-item video {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
   background: var(--bg-raised);
-  filter: grayscale(0.15) contrast(1.05);
 }
 .showcase-item figcaption {
   display: flex;
@@ -300,23 +310,38 @@ main {
   font-size: 0.78rem;
   font-weight: 500;
 }
-.showcase-loading {
-  grid-column: 1 / -1;
-  color: var(--muted);
-  font-size: 0.85rem;
-  margin: 0;
-  padding: 1rem;
+
+.carousel-controls {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+}
+.carousel-btn {
   font-family: var(--font-mono);
-  background: var(--bg);
+  font-size: 1.1rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--line);
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
 }
-.showcase-note {
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
+.carousel-btn + .carousel-count + .carousel-btn {
+  border-right: none;
+  border-left: 1px solid var(--line);
+}
+.carousel-btn:hover {
+  background: var(--invert-bg);
+  color: var(--invert-ink);
+}
+.carousel-count {
+  align-self: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   color: var(--muted);
-  max-width: 38rem;
-}
-@media (max-width: 560px) {
-  .showcase-grid { grid-template-columns: 1fr; }
+  letter-spacing: 0.08em;
 }
 
 /* ---------- Skills ---------- */
