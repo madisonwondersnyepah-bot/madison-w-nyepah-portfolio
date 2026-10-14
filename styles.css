@@ -266,34 +266,28 @@ main {
 }
 
 /* ---------- Design & video carousel ---------- */
-.carousel {
-  border: 1px solid var(--line);
-  background: var(--bg);
-}
+.carousel { margin-top: 1.75rem; }
 .carousel-track {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  border: 1px solid var(--line);
 }
 .carousel-track::-webkit-scrollbar { display: none; }
-
 .showcase-item {
   margin: 0;
   flex: 0 0 100%;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
   background: var(--bg);
 }
-/* Fixed frame so the carousel never jumps in height between slides.
-   "contain" shows the whole flyer or video without cropping.
-   Change the ratio (e.g. 3 / 4 or 9 / 16) if most pieces are portrait. */
 .showcase-item img,
 .showcase-item video {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: clamp(320px, 62vh, 560px);
   object-fit: contain;
   background: var(--bg-raised);
 }
@@ -302,46 +296,33 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  padding: 0.6rem 0.75rem;
+  padding: 0.7rem 0.9rem;
   border-top: 1px solid var(--line);
   flex-wrap: wrap;
 }
-.showcase-title {
-  font-size: 0.78rem;
-  font-weight: 500;
-}
-
+.showcase-title { font-size: 0.8rem; font-weight: 500; }
 .carousel-controls {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--line);
+  margin-top: 0.75rem;
 }
 .carousel-btn {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: 1.1rem;
-  color: var(--ink);
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line-strong);
   background: transparent;
-  border: none;
-  border-right: 1px solid var(--line);
-  padding: 0.7rem 1.4rem;
+  color: var(--ink);
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
 }
-.carousel-btn + .carousel-count + .carousel-btn {
-  border-right: none;
-  border-left: 1px solid var(--line);
-}
-.carousel-btn:hover {
-  background: var(--invert-bg);
-  color: var(--invert-ink);
-}
+.carousel-btn:hover { background: var(--invert-bg); color: var(--invert-ink); }
 .carousel-count {
-  align-self: center;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--muted);
-  letter-spacing: 0.08em;
 }
 
 /* ---------- Skills ---------- */
