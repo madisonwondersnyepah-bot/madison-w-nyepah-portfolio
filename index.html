@@ -8,20 +8,20 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- 
+
 <div class="frame">
- 
+
   <!-- Left rail: identity, nav, live status -->
   <aside class="rail">
     <div class="rail-top">
-      <a href="#top" class="mark">Madison W. Nyepah<span class="mark-dot">.</span></a>
+      <a href="#top" class="mark">Madison<span class="mark-dot">.</span></a>
       <p class="role">Final-year Engineering student<br>Kigali, Rwanda</p>
     </div>
- 
+
     <nav class="rail-nav" aria-label="Primary">
       <a href="#work">Work</a>
       <a href="#design">Design &amp; video</a>
@@ -29,16 +29,16 @@
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
- 
+
     <div class="status" aria-label="Current status">
       <span class="status-dot" aria-hidden="true"></span>
       <p><span class="status-label">Building now —</span> a drug-interaction checker for pharmacies in Liberia</p>
     </div>
   </aside>
- 
+
   <!-- Main column -->
   <main id="top">
- 
+
     <section class="hero">
       <h1>
         I build software that has to work<br>
@@ -57,10 +57,10 @@
         <a href="mailto:madisonwondersnyepah@gmail.com" class="btn btn-ghost">Email me</a>
       </div>
     </section>
- 
+
     <section id="work" class="section">
       <h2>Selected work</h2>
- 
+
       <article class="project">
         <div class="project-head">
           <h3>Rural pharmacy drug-interaction checker</h3>
@@ -74,7 +74,7 @@
         </p>
         <p class="project-meta">Python · SQLite</p>
       </article>
- 
+
       <article class="project">
         <div class="project-head">
           <h3>Loving Arms for Liberia — website</h3>
@@ -86,7 +86,7 @@
         </p>
         <p class="project-meta">Freelance · Web</p>
       </article>
- 
+
       <article class="project">
         <div class="project-head">
           <h3>My Study Planner</h3>
@@ -100,7 +100,7 @@
         </p>
         <p class="project-meta">Flutter · SQLite · Windows desktop</p>
       </article>
- 
+
       <article class="project">
         <div class="project-head">
           <h3>CI/CD pipeline, group project</h3>
@@ -115,43 +115,99 @@
         <p class="project-meta">GitHub Actions · Flask · Python</p>
       </article>
     </section>
- 
+
     <section id="design" class="section">
       <h2>Design &amp; video</h2>
       <p>
         Alongside development, I do graphic design and video editing —
-        mostly short-form video and social/brand graphics. Uploaded and
-        managed from a private admin page — no code required to update it.
+        mostly short-form video and social/brand graphics.
       </p>
- <section id="design-video">
-  <h2>Design & Video</h2>
 
-  <h3>Flyers/Designs</h3>
-  <div class="grid">
-    <figure>
-      <img src="LAFL.jpeg" alt="Loving Arms for Liberia flyer" loading="lazy">
-      <figcaption>Loving Arms for Liberia</figcaption>
-    </figure>
-    <figure>
-      <img src="Political Campaign.jpeg" alt="UniLak student campaign flyer" loading="lazy">
-      <figcaption>UniLak Student Campaign</figcaption>
-    </figure>
-  </div>
+      <!--
+        HOW TO ADD A NEW PIECE
+        1. Put the file in /images (for graphics) or /videos (for clips).
+           Use lowercase names with dashes, no spaces: my-flyer.jpg
+        2. Copy one <figure> block below, paste it at the end of the grid,
+           and change the file name, alt text, title, and tag.
+        3. git add . && git commit -m "add new work" && git push
+      -->
+      <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Design and video work">
+      <div class="carousel-track" id="carousel-track" tabindex="0">
 
-  <h3>Videos</h3>
-  <div class="grid">
-    <figure>
-      <video src="Friendcation.mp4"
-             controls preload="none"></video>
-      <figcaption>Lake Kivu Friendcation</figcaption>
-    </figure>
-  </div>
-</section>
-      <div id="showcase-grid" class="showcase-grid">
-        <p class="showcase-loading">Loading work…</p>
+        <figure class="showcase-item">
+          <img src="images/lafl-flyer.jpeg" alt="Loving Arms for Liberia charity dinner flyer" loading="lazy">
+          <figcaption>
+            <span class="showcase-title">Loving Arms for Liberia</span>
+            <span class="project-tag">Graphic design</span>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-item">
+          <img src="images/political-campaign.jpeg" alt="UniLak students political campaign flyer" loading="lazy">
+          <figcaption>
+            <span class="showcase-title">UniLak students campaign flyer</span>
+            <span class="project-tag">Graphic design</span>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-item">
+          <img src="images/radiant-beauty-glam.jpeg" alt="Radiant Beauty Glam startup business logo" loading="lazy">
+          <figcaption>
+            <span class="showcase-title">Radiant Beauty Glam</span>
+            <span class="project-tag">Graphic design</span>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-item">
+          <img src="images/topher-scents.jpeg" alt="Topher Scents startup business logo" loading="lazy">
+          <figcaption>
+            <span class="showcase-title">Topher Scents</span>
+            <span class="project-tag">Graphic design</span>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-item">
+          <video src="videos/youth-program.mp4" controls preload="metadata" playsinline></video>
+          <figcaption>
+            <span class="showcase-title">Youth Program</span>
+            <span class="project-tag">Video editing</span>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-item">
+          <video src="videos/friday-service.mp4" controls preload="metadata" playsinline></video>
+          <figcaption>
+            <span class="showcase-title">Friday Night Service</span>
+            <span class="project-tag">Video editing</span>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-item">
+          <video src="videos/friendcation.mp4" controls preload="metadata" playsinline></video>
+          <figcaption>
+            <span class="showcase-title">Lake Kivu Friendcation</span>
+            <span class="project-tag">Video editing</span>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-item">
+          <video src="videos/night-of-prayer.mp4" controls preload="metadata" playsinline></video>
+          <figcaption>
+            <span class="showcase-title">Night of Prayer</span>
+            <span class="project-tag">Video editing</span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <div class="carousel-controls">
+        <button type="button" class="carousel-btn" id="carousel-prev" aria-label="Previous piece">&larr;</button>
+        <span class="carousel-count"><span id="carousel-current">1</span> / <span id="carousel-total">8</span></span>
+        <button type="button" class="carousel-btn" id="carousel-next" aria-label="Next piece">&rarr;</button>
+      </div>
       </div>
     </section>
- 
+
     <section id="about" class="section">
       <h2>About</h2>
       <p>
@@ -169,7 +225,7 @@
         decisions more than any framework does.
       </p>
     </section>
- 
+
     <section id="skills" class="section">
       <h2>Skills &amp; tools</h2>
       <ul class="skills-list">
@@ -185,29 +241,28 @@
         <li>Video editing</li>
       </ul>
     </section>
- 
+
     <section id="contact" class="section section-contact">
       <h2>Contact</h2>
       <p>
-        Open to freelance and contract work, especially anything web applicatins,
-        mobile application, CI/CD, graphics design, or video editing related.
+        Open to freelance and contract work, especially anything web,
+        mobile, or CI/CD related.
       </p>
       <ul class="contact-list">
         <li><a href="mailto:madisonwondersnyepah@gmail.com">madisonwondersnyepah@gmail.com</a></li>
         <li><a href="https://github.com/madisonwondersnyepah-bot" target="_blank" rel="noopener">GitHub</a></li>
         <!-- TODO: replace with your real LinkedIn vanity URL, e.g. linkedin.com/in/madison-nyepah -->
-        <li><a href="https://linkedin.com/in/madison-w-nyepah" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://linkedin.com/in/your-linkedin-handle" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </section>
- 
+
     <footer class="footer">
       <p>Built by Madison. Last updated <span id="year"></span>.</p>
     </footer>
- 
+
   </main>
 </div>
- 
+
 <script src="script.js"></script>
 </body>
 </html>
- 
